@@ -318,97 +318,112 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
 </div>
 
 <script>
-/* Carrossel */
-let idx = 0;
-const inner = document.getElementById('carouselInner');
-const dots = document.querySelectorAll('.carousel-dots span');
-setInterval(() => {
-  idx = (idx + 1) % inner.children.length;
-  inner.style.transform = `translateX(-${idx * 100}%)`;
-  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-}, 4000);
-
-/* Quantidade */
-function changeQty(dir) {
-  const q = document.querySelector('.qty input');
-  const val = parseInt(q.value) + dir;
-  if (val < 1 || val > 12) return;
-  q.value = val;
-}
-
-/* Coração */
-document.getElementById('heartIcon').addEventListener('click', function(){
-  this.textContent = this.textContent === 'favorite_border' ? 'favorite' : 'favorite_border';
-  this.classList.toggle('liked');
-});
-
-/* Cupom */
-document.getElementById('btnQuero').addEventListener('click', function(){
-  this.textContent = 'Ativado';
-  this.classList.add('selected');
-});
-
-/* Contador regressivo */
-(() => {
-  let h = 2, m = 20, s = 0;
-  const elH = document.getElementById('h');
-  const elM = document.getElementById('m');
-  const elS = document.getElementById('s');
-  setInterval(() => {
-    if (--s < 0) { s = 59; if (--m < 0) { m = 59; if (--h < 0) h = 0; } }
-    elH.textContent = String(h).padStart(2, '0');
-    elM.textContent = String(m).padStart(2, '0');
-    elS.textContent = String(s).padStart(2, '0');
-  }, 1000);
-})();
-
-/* Ver mais / menos – só depois do DOM pronto */
+/* ----- tudo dentro do mesmo listener ----- */
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* carrossel */
+  let idx = 0;
+  const inner = document.getElementById('carouselInner');
+  const dots  = document.querySelectorAll('.carousel-dots span');
+  setInterval(() => {
+    idx = (idx + 1) % inner.children.length;
+    inner.style.transform = `translateX(-${idx * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }, 4000);
+
+  /* quantidade */
+  window.changeQty = dir => {
+    const q = document.querySelector('.qty input');
+    const v = parseInt(q.value) + dir;
+    if (v < 1 || v > 12) return;
+    q.value = v;
+  };
+
+  /* coração */
+  const heart = document.getElementById('heartIcon');
+  if (heart) {
+    heart.addEventListener('click', () => {
+      heart.textContent = heart.textContent === 'favorite_border' ? 'favorite' : 'favorite_border';
+      heart.classList.toggle('liked');
+    });
+  }
+
+  /* cupom */
+  const cupom = document.getElementById('btnQuero');
+  if (cupom) {
+    cupom.addEventListener('click', () => {
+      cupom.textContent = 'Ativado';
+      cupom.classList.add('selected');
+    });
+  }
+
+  /* contador regressivo */
+  (() => {
+    let h = 2, m = 20, s = 0;
+    const elH = document.getElementById('h');
+    const elM = document.getElementById('m');
+    const elS = document.getElementById('s');
+    setInterval(() => {
+      if (--s < 0) { s = 59; if (--m < 0) { m = 59; if (--h < 0) h = 0; } }
+      elH.textContent = String(h).padStart(2, '0');
+      elM.textContent = String(m).padStart(2, '0');
+      elS.textContent = String(s).padStart(2, '0');
+    }, 1000);
+  })();
+
+  /* -------- VER MAIS / MENOS -------- */
   const btn = document.getElementById('btnVerMais');
   const seta = document.getElementById('seta');
   const desc = document.getElementById('descCompleta');
-  btn.addEventListener('click', () => {
-    const aberto = desc.style.display === 'block';
-    desc.style.display = aberto ? 'none' : 'block';
-    seta.style.transform = aberto ? '' : 'rotate(180deg)';
-    btn.innerHTML = aberto
-      ? 'Ver mais<span id="seta" style="transition:transform .3s">⌄</span>'
-      : 'Ver menos<span id="seta" style="transition:transform .3s">⌄</span>';
-  });
-});
+  if (btn && seta && desc) {
+    btn.addEventListener('click', () => {
+      const aberto = desc.style.display === 'block';
+      desc.style.display = aberto ? 'none' : 'block';
+      seta.style.transform = aberto ? '' : 'rotate(180deg)';
+      btn.innerHTML = aberto
+        ? 'Ver mais<span id="seta" style="transition:transform .3s">⌄</span>'
+        : 'Ver menos<span id="seta" style="transition:transform .3s">⌄</span>';
+    });
+  }
 
-/* Galeria de avaliações */
-const items = document.querySelectorAll('.review-item');
-let indiceAtual = 0;
-let scrollAntes = 0;
-function abrirGaleria(i){
-  indiceAtual = i;
-  scrollAntes = window.pageYOffset;
-  document.documentElement.style.overflow = 'hidden';
-  atualizarGaleria();
-  document.getElementById('galeriaOverlay').style.display = 'block';
-}
-function fechaGaleria(){
-  document.getElementById('galeriaOverlay').style.display = 'none';
-  document.documentElement.style.overflow = '';
-  window.scrollTo(0, scrollAntes);
-}
-function mudarImg(dir){
-  indiceAtual = (indiceAtual + dir + items.length) % items.length;
-  atualizarGaleria();
-}
-function atualizarGaleria(){
-  const item = items[indiceAtual];
-  document.getElementById('galeriaImg').src = item.dataset.img;
-  document.getElementById('galeriaPerfil').src = item.dataset.perfil;
-  document.getElementById('galeriaUsuario').textContent = item.dataset.usuario;
-  document.getElementById('galeriaEstrelas').textContent = '★'.repeat(parseInt(item.dataset.nota));
-  document.getElementById('galeriaTexto').textContent = item.dataset.text;
-}
-document.getElementById('galeriaOverlay').addEventListener('click', e => {
-  if (e.target === document.getElementById('galeriaOverlay')) fechaGaleria();
+  /* galeria de avaliações */
+  const items = document.querySelectorAll('.review-item');
+  let indiceAtual = 0;
+  let scrollAntes = 0;
+
+  window.abrirGaleria = i => {
+    indiceAtual = i;
+    scrollAntes = window.pageYOffset;
+    document.documentElement.style.overflow = 'hidden';
+    atualizarGaleria();
+    document.getElementById('galeriaOverlay').style.display = 'block';
+  };
+  window.fechaGaleria = () => {
+    document.getElementById('galeriaOverlay').style.display = 'none';
+    document.documentElement.style.overflow = '';
+    window.scrollTo(0, scrollAntes);
+  };
+  window.mudarImg = dir => {
+    indiceAtual = (indiceAtual + dir + items.length) % items.length;
+    atualizarGaleria();
+  };
+  function atualizarGaleria(){
+    const item = items[indiceAtual];
+    document.getElementById('galeriaImg').src = item.dataset.img;
+    document.getElementById('galeriaPerfil').src = item.dataset.perfil;
+    document.getElementById('galeriaUsuario').textContent = item.dataset.usuario;
+    document.getElementById('galeriaEstrelas').textContent = '★'.repeat(parseInt(item.dataset.nota));
+    document.getElementById('galeriaTexto').textContent = item.dataset.text;
+  }
+  const overlay = document.getElementById('galeriaOverlay');
+  if (overlay) {
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) fechaGaleria();
+    });
+  }
 });
 </script>
+</body>
 
 </body>
 </html>
