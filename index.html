@@ -260,9 +260,7 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
 <!-- DESCRIÇÃO (resumida) -->
 <div class="tab-content">
   <h4>Descrição do produto</h4>
-  <ul>
-   <div id="Ver rmais" style="display:none">
-    
+  <ul> 
     <li><b>Dimensão:</b> 49 × 43 × 13,8 mm</li>
     <li><b>Estojo:</b> liga de titânio resistente e leve</li>
     <li><b>Cinta:</b> silicone padrão, compatível com 44/45/49 mm</li>
@@ -364,17 +362,19 @@ document.getElementById('btnQuero').addEventListener('click', function(){
   }, 1000);
 })();
 
-/* Ver mais / menos */
-const btn = document.getElementById('btnVerMais');
-const seta = document.getElementById('seta');
-const desc = document.getElementById('descCompleta');
-btn.addEventListener('click', () => {
-  const aberto = desc.style.display === 'block';
-  desc.style.display = aberto ? 'none' : 'block';
-  seta.style.transform = aberto ? '' : 'rotate(180deg)';
-  btn.innerHTML = aberto
-    ? 'Ver mais<span id="seta" style="transition:transform .3s">⌄</span>'
-    : 'Ver menos<span id="seta" style="transition:transform .3s">⌄</span>';
+/* Ver mais / menos – só depois do DOM pronto */
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('btnVerMais');
+  const seta = document.getElementById('seta');
+  const desc = document.getElementById('descCompleta');
+  btn.addEventListener('click', () => {
+    const aberto = desc.style.display === 'block';
+    desc.style.display = aberto ? 'none' : 'block';
+    seta.style.transform = aberto ? '' : 'rotate(180deg)';
+    btn.innerHTML = aberto
+      ? 'Ver mais<span id="seta" style="transition:transform .3s">⌄</span>'
+      : 'Ver menos<span id="seta" style="transition:transform .3s">⌄</span>';
+  });
 });
 
 /* Galeria de avaliações */
