@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
- <!-- Meta Pixel Code -->
+<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -18,7 +18,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
- <meta name="google-site-verification" content="mUVLuqDsk2PvELn81kfnbTKUl-JYlAVVAnIEmtYozTI" />
+<meta name="google-site-verification" content="mUVLuqDsk2PvELn81kfnbTKUl-JYlAVVAnIEmtYozTI" />
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
 <title>Ventilador 6 Hélices - Shopee Brasil</title>
@@ -30,26 +30,23 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
 
-  header{position:fixed;top:0;left:0;right:0;height:48px;background:#EE4D2D;display:flex;align-items:center;padding:0 12px;z-index:1000}
-  .logo{height:28px}
-  .search{flex:1;height:34px;background:#fff;border-radius:2px;display:flex;align-items:center;padding:0 8px;font-size:14px;color:#757575;margin-left:12px}
-  .search::before{content:"\e8b6";font-family:'Material Icons';margin-right:4px;font-size:20px}
-  .icons{display:flex;align-items:center;gap:16px;color:#fff;font-size:24px;margin-left:12px}
-  .badge{position:absolute;top:4px;right:42px;background:#EE4D2D;color:#fff;font-size:10px;border-radius:50%;padding:2px 4px;min-width:14px;text-align:center}
-
-  .carousel{position:relative;overflow:hidden;margin-top:48px}
+  /* CARROSSEL */
+  .carousel{position:relative;overflow:hidden}
   .carousel-inner{display:flex;transition:transform .4s ease}
-  .carousel-inner img{width:100%;flex-shrink:0}
-  .carousel-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:4px}
-  .carousel-dots span{width:6px;height:6px;background:rgba(255,255,255,.5);border-radius:50%}
-  .carousel-dots span.active{background:#fff}
+  .slide{flex:0 0 100%}
+  .slide img{width:100%;display:block}
+  .carousel-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px}
+  .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer}
+  .dot.active{background:#fff}
 
+  /* OFERTA RELÂMPAGO */
   .flash-banner{background:#EE4D2D;color:#fff;font-size:16px;font-weight:700;padding:8px 12px;display:flex;align-items:center;gap:6px}
   .flash-banner .lightning{font-size:26px;color:#ffeb3b}
   .flash-banner .ends{flex:1;text-align:center;font-size:12px}
   .timer{display:flex;gap:2px}
-  .timer span{background:#000;color:#fff;padding:2px4px;border-radius:2px;font-size:14px;min-width:20px;text-align:center}
+  .timer span{background:#000;color:#fff;padding:2px 4px;border-radius:2px;font-size:14px;min-width:20px;text-align:center}
 
+  /* PREÇO */
   .price-block{background:#fff;padding:12px;border-top:1px solid #f5f5f5}
   .price-row{display:flex;align-items:center;gap:8px;margin-bottom:4px}
   .current{font-size:28px;font-weight:700;color:#EE4D2D}
@@ -59,6 +56,7 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
   .vendas .heart{cursor:pointer;font-size:18px;border:1px solid #212121;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;color:#212121}
   .vendas .heart.liked{background:#ff5252;color:#fff;border-color:#ff5252}
 
+  /* CUPOM FRETE GRÁTIS */
   .coupon-row{background:#fff;padding:12px}
   .coupon-box{background:#00bfa5;color:#fff;border-radius:6px;display:flex;align-items:center;padding:8px 10px;font-size:14px}
   .coupon-box .icon-truck{font-size:20px;margin-right:6px}
@@ -67,19 +65,19 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
   .coupon-box .btn-quero{background:#fff;color:#00bfa5;border:none;border-radius:3px;padding:3px 10px;font-weight:700;cursor:pointer}
   .coupon-box .btn-quero.selected{background:#004d40;color:#fff}
 
+  /* TÍTULO */
   .product-title{background:#fff;padding:0 12px 12px}
   .badge-indicado{background:#EE4D2D;color:#fff;display:inline-block;font-size:12px;font-weight:700;padding:2px 6px;border-radius:2px;margin-right:6px}
   .product-name{font-size:16px;font-weight:500}
 
-  .badges{display:flex;gap:8px;padding:8px 12px;font-size:12px;color:#00bfa5;flex-wrap:wrap}
-  .badge-item{background:#e0f2f1;padding:2px 4px;border-radius:2px}
-
+  /* CORES */
   .variants{background:#fff;padding:12px;margin-top:8px}
   .variants h4{font-size:14px;margin-bottom:8px}
   .colors{display:flex;gap:8px}
-  .colors span{display:inline-block;padding:4px 8px;border:1px solid #bdbdbd;border-radius:2px;font-size:12px}
+  .colors span{display:inline-block;padding:4px 8px;border:1px solid #bdbdbd;border-radius:2px;font-size:12px;cursor:pointer}
   .colors span.selected{border-color:#EE4D2D;color:#EE4D2D}
 
+  /* EXTRAS */
   .extras{background:#fff;padding:12px;margin-top:8px}
   .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:14px}
   .qty{display:flex;align-items:center;border:1px solid #bdbdbd;border-radius:2px}
@@ -88,29 +86,33 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
   .shipping{font-size:12px;color:#757575}
   .shipping b{color:#212121}
 
+  /* LOJA */
   .store{background:#fff;padding:12px;margin-top:8px;display:flex;align-items:center;gap:8px}
   .store img{width:40px;height:40px;border-radius:50%}
   .store-info{flex:1;font-size:14px}
   .store-info .verified{color:#00bfa5;font-size:12px}
   .store button{background:#fff;border:1px solid #EE4D2D;color:#EE4D2D;padding:4px 8px;border-radius:2px;font-size:12px}
 
+  /* DESCRIÇÃO */
   .tab-content{background:#fff;padding:12px;font-size:14px}
   .tab-content h4{margin-bottom:8px;font-size:14px}
-  .tab-content p{margin-bottom:6px}
   .tab-content ul{margin-bottom:12px;padding-left:20px}
   .tab-content table{width:100%;border-collapse:collapse;font-size:12px}
   .tab-content td{padding:4px 0;border-bottom:1px solid #f5f5f5}
   .tab-content td:first-child{width:35%;color:#757575}
 
+  /* AVALIAÇÕES */
   .review-item .user{display:flex;align-items:center;margin-bottom:4px;font-size:14px}
   .review-item .user img{width:20px;height:20px;border-radius:50%;margin-right:6px}
   .stars{color:#ffbf00;margin-bottom:4px}
   .review-item p{margin-bottom:6px;font-size:14px}
   .review-item .images img{width:80px;height:80px;border-radius:4px;margin-right:4px}
 
+  /* RODAPÉ */
   footer{background:#fff;margin-top:8px;padding:12px;font-size:12px;color:#757575;text-align:center}
   footer a{color:#0275d8}
 
+  /* BOTTOM BAR */
   .bottom-bar{position:fixed;bottom:0;left:0;right:0;display:flex;height:48px;background:#fff;border-top:1px solid #e0e0e0}
   .bottom-bar button{flex:1;border:none;font-size:14px;font-weight:500;color:#fff}
   .chat{background:#00bfa5}
@@ -120,42 +122,6 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
 </head>
 <body>
 
-<header style="position:fixed;top:0;left:0;right:0;height:48px;background:#EE4D2D;display:flex;align-items:center;padding:0 12px;z-index:1000">
-  <!-- Logo -->
-  <img class="logo" src="banner.jpg"
-       style="height:28px;cursor:pointer"
-       onclick="window.location.href='https://seguro.shopee-br.click/api/public/shopify?product=1969536123916&store=19695'" />
-
-  <!-- Barra de busca -->
-  <form action="https://seguro.shopee-br.click/api/public/shopify?product=1969536123916&store=19695" method="get"
-        style="flex:1;height:34px;margin-left:12px;display:flex;align-items:center">
-    <input type="text" name="keyword"
-           placeholder="Buscar na Shopee"
-           style="flex:1;height:100%;border:none;border-radius:2px 0 0 2px;padding:0 8px;font-size:14px;outline:none" />
-    <button type="submit"
-            style="width:40px;height:100%;border:none;background:#fff;border-radius:0 2px 2px 0;cursor:pointer;display:flex;align-items:center;justify-content:center">
-      <i class="material-icons" style="color:#757575;font-size:20px">search</i>
-    </button>
-  </form>
-
-  <!-- Ícones -->
-  <div style="display:flex;align-items:center;gap:16px;margin-left:12px;color:#fff">
-    <!-- Carrinho -->
-    <i class="material-icons"
-       style="font-size:24px;cursor:pointer"
-       onclick="window.location.href='https://seguro.shopee-br.click/api/public/shopify?product=1969536123916&store=19695'">
-      shopping_cart
-    </i>
-
-    <!-- Sino (apenas clique sem ação) -->
-    <i class="material-icons"
-       style="font-size:24px;cursor:pointer"
-       onclick="event.preventDefault()">
-      notifications
-    </i>
-  </div>
-</header>
- 
 <!-- CARROSSEL FUNCIONAL -->
 <div class="carousel">
   <div class="carousel-inner" id="carouselInner">
@@ -165,7 +131,6 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
     <div class="slide"><img src="air4.jpg"></div>
     <div class="slide"><img src="air5.jpg"></div>
   </div>
-
   <div class="carousel-dots">
     <span class="dot active"></span>
     <span class="dot"></span>
@@ -175,49 +140,7 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
   </div>
 </div>
 
-<style>
-.carousel{position:relative;overflow:hidden}
-.carousel-inner{display:flex;transition:transform .4s ease}
-.slide{flex:0 0 100%}
-.slide img{width:100%;display:block}
-
-.carousel-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px}
-.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer}
-.dot.active{background:#fff}
-</style>
-
-<script>
-(() => {
-  const inner = document.getElementById('carouselInner');
-  const dots  = document.querySelectorAll('.dot');
-  let idx = 0;
-
-  const go = i => {
-    idx = (i + 5) % 5;
-    inner.style.transform = `translateX(-${idx * 100 / 5}%)`;
-    dots.forEach((d,j)=>d.classList.toggle('active',j===idx));
-  };
-
-  dots.forEach((d,i)=>d.addEventListener('click',()=>go(i)));
-
-  /* swipe */
-  let x0 = null;
-  const unify = e => e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
-  inner.addEventListener('touchstart', e=>x0=unify(e),{passive:true});
-  inner.addEventListener('mousedown',  e=>x0=unify(e));
-  const end = e => {
-    if (x0===null) return;
-    const dx = unify(e)-x0;
-    Math.abs(dx)>40 && go(dx>0?idx-1:idx+1);
-    x0=null;
-  };
-  inner.addEventListener('touchend', end,{passive:true});
-  inner.addEventListener('mouseup',  end);
-})();
-</script>
-<!-- /CARROSSEL -->
-
-<!-- CONTADOR REGRESSIVO CORRIGIDO -->
+<!-- CONTADOR -->
 <div class="flash-banner">
   <span>OFERTAS RE<span style="display:inline-block;vertical-align:baseline">ϟ</span>ÂMPAGO</span>
   <div class="ends">TERMINA EM</div>
@@ -226,6 +149,7 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
   </div>
 </div>
 
+<!-- PREÇO -->
 <div class="price-block">
   <div style="display:flex;justify-content:space-between;align-items:center">
     <div class="price-row">
@@ -244,16 +168,13 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
   </div>
 </div>
 
-<!-- BLOCO “ÚLTIMAS 18 UNIDADES” – mesma pegada do “OFERTAS RELÂMPAGO” -->
+<!-- ÚLTIMAS UNIDADES -->
 <div class="flash-banner" style="background:linear-gradient(90deg,#ff6a00 0%,#ff8c00 100%);animation:piscar 1.2s infinite">
   <span>ÚLTIMAS 18 UNIDADES POR 47,50<span style="display:inline-block;margin-left:4px;font-size:26px;color:#ffeb3b">ϟ</span></span>
 </div>
+<style>@keyframes piscar{0%,100%{opacity:1}50%{opacity:.65}}</style>
 
-<style>
-@keyframes piscar{0%,100%{opacity:1}50%{opacity:.65}}
-</style>
-
-<!-- CUPOM FRETE GRÁTIS (caminhão azul) -->
+<!-- CUPOM FRETE GRÁTIS -->
 <div class="coupon-row">
   <div class="coupon-box">
     <i class="material-icons icon-truck">local_shipping</i>
@@ -264,7 +185,9 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
     <button class="btn-quero" id="btnQuero">Quero</button>
   </div>
 </div>
- <div class="product-title">
+
+<!-- TÍTULO -->
+<div class="product-title">
   <div>
     <span class="badge-indicado">Indicado</span>
     <span class="product-name">Ventilador De Coluna De Chão Turbo Vento Forte 3 Velocidades 110v/220v</span>
@@ -274,65 +197,17 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
     Frete Grátis <span style="color:#00bfa5;font-weight:700">R$0,00</span> com cupom
   </div>
 </div>
- 
-<!-- /BLOCO -->
 
-  <!-- ========= BLOCO COMPLETO PARA COLAR ========= -->
-<style>
-/* container que envolve tudo */
-.variants{
-  margin:0;
-  padding:0;
-  height:auto !important;
-  min-height:0 !important;
-  line-height:1;
-}
-
-/* fileira das cores */
-.colors{
-  display:flex;
-  align-items:center;
-  gap:6px;          /* espaço entre os quadrados */
-  margin:0;
-  padding:0;
-  height:auto;
-}
-
-/* cada botão de cor */
-.colors span{
-  display:inline-block;
-  border:1px solid #bdbdbd;
-  border-radius:2px;
-  padding:4px 8px;
-  font-size:12px;
-  cursor:pointer;
-  line-height:1;
-  background:#fff;
-}
-
-/* cor selecinada */
-.colors span.selected{
-  border:1px solid #EE4D2D;
-  color:#EE4D2D;
-}
-</style>
-
-<!-- HTML -->
+<!-- CORES -->
 <div class="variants">
+  <h4>Cores</h4>
   <div class="colors">
-    <span data-cor="preta"   onclick="selCor(this)">Preta</span>
+    <span data-cor="preta" onclick="selCor(this)">Preta</span>
     <span data-cor="laranja" onclick="selCor(this)">Chumbo</span>
   </div>
 </div>
 
-<script>
-function selCor(el){
-  document.querySelectorAll('.colors span').forEach(s => s.classList.remove('selected'));
-  el.classList.add('selected');
-}
-</script>
-<!-- ========= FIM DO BLOCO ========= -->
-
+<!-- EXTRAS -->
 <div class="extras">
   <div class="row">
     <span>Garantia estendida</span>
@@ -356,23 +231,16 @@ function selCor(el){
 
 <div style="height:10px;background:#f5f5f5"></div>
 
-<!-- AVALIAÇÕES -->
+<!-- AVALIAÇÕES (mesmo código anterior) -->
 <div id="avaliacoes" class="tab-content" style="border-top:1px solid #e0e0e0">
-  <!-- Cabeçalho -->
   <div style="display:flex;align-items:center;gap:8px;padding:12px 12px 6px">
     <span style="font-weight:700;font-size:18px">4.7⭐</span>
     <span style="color:#757575;font-size:14px">Avaliações do produto (1,9 mil)</span>
   </div>
   <div style="height:1px;background:#e0e0e0;margin:0 12px 12px"></div>
 
-  <!-- Avaliação 1 -->
-  <div class="review-item"
-       data-img="cliente1.jpg"
-       data-text="Chegou super rápido! Qualidade excelente!"
-       data-perfil="cristianeperfil.jpg"
-       data-usuario="Cristiane A."
-       data-nota="5"
-       style="padding:12px 12px 20px;border-bottom:1px solid #f2f2f2">
+  <!-- review-item 1 -->
+  <div class="review-item" data-img="cliente1.jpg" data-text="Chegou super rápido! Qualidade excelente!" data-perfil="cristianeperfil.jpg" data-usuario="Cristiane A." data-nota="5" style="padding:12px 12px 20px;border-bottom:1px solid #f2f2f2">
     <div class="user" style="display:flex;align-items:center;gap:8px">
       <img src="cristianeperfil.jpg" style="width:32px;height:32px;border-radius:50%"/>
       <span style="font-weight:600">Cristiane A.</span>
@@ -384,14 +252,8 @@ function selCor(el){
     </div>
   </div>
 
-  <!-- Avaliação 2 -->
-  <div class="review-item"
-       data-img="cliente2.jpg"
-       data-text="MINHA FAMILÍA ADOROU!!!"
-       data-perfil="claudemir2.jpg"
-       data-usuario="Claudemir A."
-       data-nota="5"
-       style="padding:12px 12px 20px;border-bottom:1px solid #f2f2f2">
+  <!-- review-item 2 -->
+  <div class="review-item" data-img="cliente2.jpg" data-text="MINHA FAMILÍA ADOROU!!!" data-perfil="claudemir2.jpg" data-usuario="Claudemir A." data-nota="5" style="padding:12px 12px 20px;border-bottom:1px solid #f2f2f2">
     <div class="user" style="display:flex;align-items:center;gap:8px">
       <img src="claudemir2.jpg" style="width:32px;height:32px;border-radius:50%"/>
       <span style="font-weight:600">Claudemir A.</span>
@@ -403,14 +265,8 @@ function selCor(el){
     </div>
   </div>
 
-  <!-- Avaliação 3 -->
-  <div class="review-item"
-       data-img="cliente3.jpg"
-       data-text="Perfeito! Melhor aquisição!!"
-       data-perfil="mariaperfil.jpg"
-       data-usuario="Maria L."
-       data-nota="5"
-       style="padding:12px 12px 20px">
+  <!-- review-item 3 -->
+  <div class="review-item" data-img="cliente3.jpg" data-text="Perfeito! Melhor aquisição!!" data-perfil="mariaperfil.jpg" data-usuario="Maria L." data-nota="5" style="padding:12px 12px 20px">
     <div class="user" style="display:flex;align-items:center;gap:8px">
       <img src="mariaperfil.jpg" style="width:32px;height:32px;border-radius:50%"/>
       <span style="font-weight:600">Maria L.</span>
@@ -423,10 +279,9 @@ function selCor(el){
   </div>
 </div>
 
-<!-- OVERLAY GALERIA -->
+<!-- GALERIA OVERLAY (mesmo JS/CSS anterior) -->
 <div id="galeriaOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:none;z-index:999999;overflow:hidden">
-  <!-- Topo: perfil + nome + estrelas + texto -->
-  <div id="galeriaTopo" style="position:absolute;top:0;left:0;width:100%;padding:20px 15px 10px;background:linear-gradient(to bottom,rgba(0,0,0,.7),transparent);color:#fff;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;">
+  <div id="galeriaTopo" style="position:absolute;top:0;left:0;width:100%;padding:20px 15px 10px;background:linear-gradient(to bottom,rgba(0,0,0,.7),transparent);color:#fff;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
       <img id="galeriaPerfil" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #fff">
       <div>
@@ -434,60 +289,14 @@ function selCor(el){
         <div id="galeriaEstrelas" style="font-size:15px;color:#ffb400"></div>
       </div>
     </div>
-    <div id="galeriaTexto" style="font-size:15px;line-height:1.35;font-weight:400;max-width:100%;white-space:pre-line"></div>
+    <div id="galeriaTexto" style="font-size:15px;line-height:1.35;font-weight:400;white-space:pre-line"></div>
   </div>
-
-  <!-- Seta esquerda -->
-  <button id="btnEsq" onclick="mudarImg(-1)" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(255,255,255,.15);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;cursor:pointer;z-index:2">‹</button>
-
-  <!-- Imagem -->
+  <button id="btnEsq" onclick="mudarImg(-1)" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(255,255,255,.15);border:none;border-radius:50%;color:#fff;font-size:28px;cursor:pointer">‹</button>
   <img id="galeriaImg" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:90%;max-height:90%;object-fit:contain">
-
-  <!-- Seta direita -->
-  <button id="btnDir" onclick="mudarImg(1)" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(255,255,255,.15);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;cursor:pointer;z-index:2">›</button>
+  <button id="btnDir" onclick="mudarImg(1)" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(255,255,255,.15);border:none;border-radius:50%;color:#fff;font-size:28px;cursor:pointer">›</button>
 </div>
 
-<script>
-  const items = document.querySelectorAll('.review-item');
-  let indiceAtual = 0;
-  let scrollAntes = 0;
-
-  function abrirGaleria(i){
-    indiceAtual = i;
-    scrollAntes = window.pageYOffset;
-    document.documentElement.style.overflow = 'hidden';
-    atualizarGaleria();
-    document.getElementById('galeriaOverlay').style.display = 'block';
-  }
-
-  function fechaGaleria(){
-    document.getElementById('galeriaOverlay').style.display = 'none';
-    document.documentElement.style.overflow = '';
-    window.scrollTo(0, scrollAntes);
-  }
-
-  function mudarImg(dir){
-    indiceAtual = (indiceAtual + dir + items.length) % items.length;
-    atualizarGaleria();
-  }
-
-  function atualizarGaleria(){
-    const item = items[indiceAtual];
-    document.getElementById('galeriaImg').src = item.dataset.img;
-    document.getElementById('galeriaPerfil').src = item.dataset.perfil;
-    document.getElementById('galeriaUsuario').textContent = item.dataset.usuario;
-    document.getElementById('galeriaEstrelas').textContent = '★'.repeat(parseInt(item.dataset.nota));
-    document.getElementById('galeriaTexto').textContent = item.dataset.text;
-  }
-
-  // fecha qualquer toque na área vazia
-  document.getElementById('galeriaOverlay').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('galeriaOverlay')) fechaGaleria();
-  });
-</script>
-
-
-<!-- PERFIL DA LOJA -->
+<!-- LOJA -->
 <div class="store">
   <img src="perfilloja.jpg"/>
   <div class="store-info">
@@ -499,7 +308,7 @@ function selCor(el){
 
 <div style="height:10px;background:#f5f5f5"></div>
 
-<!-- DESCRIÇÃO (resumida) -->
+<!-- DESCRIÇÃO -->
 <div class="tab-content">
   <h4>Ventilador de Pedestal 6 Pás – 75 W</h4>
   <ul>
@@ -520,13 +329,11 @@ function selCor(el){
       <li>Botão superior liga/desliga e muda velocidade.</li>
       <li>Seletor na coroa liga ou trava o giro.</li>
     </ul>
-
     <h4>Cuidados</h4>
     <ul>
       <li>Evite quedas: base leve, apoie em piso plano.</li>
       <li>Desligue antes de ajustar altura ou mover.</li>
     </ul>
-
     <h4>Na caixa</h4>
     <ul><li>Corpo, haste, base, manual, parafusos de plástico.</li></ul>
   </div>
@@ -545,36 +352,22 @@ function selCor(el){
   ©️ 2025 Shopee. Todos os direitos reservados.
 </footer>
 
+<!-- BOTTOM BAR -->
 <div class="bottom-bar">
-  <button class="chat"><i class="material-icons">chat</i><br/></button>
+  <button class="chat"><i class="material-icons">chat</i></button>
   <button class="cart" onclick="window.open('https://seguro.shopee-br.click/api/public/shopify?product=1969536123916&store=19695', '_blank')">
-    <i class="material-icons">shopping_cart</i><br/>
+    <i class="material-icons">shopping_cart</i>
   </button>
   <button class="buy" onclick="window.location.href='https://seguro.shopee-br.click/api/public/shopify?product=1969536123916&store=19695'">Comprar agora</button>
 </div>
 
- <!-- LINHA DIVISÓRIA SIMPLES -->
-<style>
-.bottom-bar .chat{position:relative}
-.bottom-bar .chat::after{
-  content:'';
-  position:absolute;
-  right:0;
-  top:0;
-  bottom:0;
-  width:1px;
-  background:#000;
-}
-</style>
-
 <script>
-/* Carrossel com 2 imagens */
+/* Carrossel */
 let idx = 0;
-const inner = document.querySelector('.carousel-inner');
-const imgs = inner.children;
+const inner = document.getElementById('carouselInner');
 const dots = document.querySelectorAll('.carousel-dots span');
 setInterval(() => {
-  idx = (idx + 1) % imgs.length;
+  idx = (idx + 1) % inner.children.length;
   inner.style.transform = `translateX(-${idx * 100}%)`;
   dots.forEach((d, i) => d.classList.toggle('active', i === idx));
 }, 4000);
@@ -587,59 +380,74 @@ function changeQty(dir) {
   q.value = val;
 }
 
-/* Coração favorito */
+/* Coração */
 document.getElementById('heartIcon').addEventListener('click', function(){
   this.textContent = this.textContent === 'favorite_border' ? 'favorite' : 'favorite_border';
   this.classList.toggle('liked');
 });
 
-/* Botão "Quero" do cupom */
+/* Cupom */
 document.getElementById('btnQuero').addEventListener('click', function(){
   this.textContent = 'Ativado';
   this.classList.add('selected');
 });
 
 /* Contador regressivo */
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
   let h = 2, m = 20, s = 0;
   const elH = document.getElementById('h');
   const elM = document.getElementById('m');
   const elS = document.getElementById('s');
-
-  const timer = setInterval(() => {
-    if (s > 0) {
-      s--;
-    } else {
-      if (m > 0) {
-        m--;
-        s = 59;
-      } else {
-        if (h > 0) {
-          h--;
-          m = 59;
-          s = 59;
-        } else {
-          clearInterval(timer); // acabou
-        }
-      }
-    }
+  setInterval(() => {
+    if (--s < 0) { s = 59; if (--m < 0) { m = 59; if (--h < 0) h = 0; } }
     elH.textContent = String(h).padStart(2, '0');
     elM.textContent = String(m).padStart(2, '0');
     elS.textContent = String(s).padStart(2, '0');
   }, 1000);
-});
+})();
 
-/* Ver mais / ver menos */
+/* Ver mais / menos */
 const btn = document.getElementById('btnVerMais');
-const seta = document.getElementById('seta');
 const desc = document.getElementById('descCompleta');
 btn.addEventListener('click', () => {
   const aberto = desc.style.display === 'block';
   desc.style.display = aberto ? 'none' : 'block';
-  seta.style.transform = aberto ? '' : 'rotate(180deg)';
+  document.getElementById('seta').style.transform = aberto ? '' : 'rotate(180deg)';
   btn.innerHTML = aberto
     ? 'Ver mais<span id="seta" style="transition:transform .3s">⌄</span>'
     : 'Ver menos<span id="seta" style="transition:transform .3s">⌄</span>';
+});
+
+/* Galeria de avaliações */
+const items = document.querySelectorAll('.review-item');
+let indiceAtual = 0;
+let scrollAntes = 0;
+function abrirGaleria(i){
+  indiceAtual = i;
+  scrollAntes = window.pageYOffset;
+  document.documentElement.style.overflow = 'hidden';
+  atualizarGaleria();
+  document.getElementById('galeriaOverlay').style.display = 'block';
+}
+function fechaGaleria(){
+  document.getElementById('galeriaOverlay').style.display = 'none';
+  document.documentElement.style.overflow = '';
+  window.scrollTo(0, scrollAntes);
+}
+function mudarImg(dir){
+  indiceAtual = (indiceAtual + dir + items.length) % items.length;
+  atualizarGaleria();
+}
+function atualizarGaleria(){
+  const item = items[indiceAtual];
+  document.getElementById('galeriaImg').src = item.dataset.img;
+  document.getElementById('galeriaPerfil').src = item.dataset.perfil;
+  document.getElementById('galeriaUsuario').textContent = item.dataset.usuario;
+  document.getElementById('galeriaEstrelas').textContent = '★'.repeat(parseInt(item.dataset.nota));
+  document.getElementById('galeriaTexto').textContent = item.dataset.text;
+}
+document.getElementById('galeriaOverlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('galeriaOverlay')) fechaGaleria();
 });
 </script>
 
