@@ -261,6 +261,7 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
 <div class="tab-content">
   <h4>Descrição do produto</h4>
   <ul>
+   <div id="descCompleta" style="display:none">
     <li><b>Dimensão:</b> 49 × 43 × 13,8 mm</li>
     <li><b>Estojo:</b> liga de titânio resistente e leve</li>
     <li><b>Cinta:</b> silicone padrão, compatível com 44/45/49 mm</li>
@@ -362,15 +363,15 @@ document.getElementById('btnQuero').addEventListener('click', function(){
 })();
 
 /* Ver mais / menos */
-const btn = document.getElementById('btnVerMais');
+const btn  = document.getElementById('btnVerMais');
 const desc = document.getElementById('descCompleta');
 btn.addEventListener('click', () => {
   const aberto = desc.style.display === 'block';
   desc.style.display = aberto ? 'none' : 'block';
+  btn.innerHTML  = aberto
+    ? 'Ver mais<span id="seta">⌄</span>'
+    : 'Ver menos<span id="seta">⌄</span>';
   document.getElementById('seta').style.transform = aberto ? '' : 'rotate(180deg)';
-  btn.innerHTML = aberto
-    ? 'Ver mais<span id="seta" style="transition:transform .3s">⌄</span>'
-    : 'Ver menos<span id="seta" style="transition:transform .3s">⌄</span>';
 });
 
 /* Galeria de avaliações */
