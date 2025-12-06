@@ -378,6 +378,28 @@ src="https://www.facebook.com/tr?id=1181691960041575&ev=PageView&noscript=1"
          onclick="abrirGaleria(2)">
   </div>
 </div>
+
+ <!-- review-item 4 (vídeo inline) -->
+<div class="review-item"
+     data-img="joaovideo.mp4"   <!-- o próprio vídeo serve como "imagem" -->
+     data-text="Ação em primeira pessoa! Assista ao vídeo e sinta o blowback da KL-92."
+     data-perfil="joaoperfil.jpg"
+     data-usuario="João M."
+     data-nota="5"
+     style="padding:12px 12px 20px">
+  <div class="user" style="display:flex;align-items:center;gap:8px">
+    <img src="joaoperfil.jpg" style="width:32px;height:32px;border-radius:50%">
+    <span style="font-weight:600">João M.</span>
+  </div>
+  <div class="stars" style="color:#ffa500;font-size:14px;margin:6px 0">★★★★★</div>
+  <p style="margin:0 0 8px;font-size:14px;line-height:1.4">Ação em primeira pessoa! Assista ao vídeo e sinta o blowback da KL-92.</p>
+  <div class="images">
+    <!-- miniatura = 1º quadro do vídeo -->
+    <video src="joaovideo.mp4#t=0.1"
+           style="width:72px;height:72px;border-radius:8px;object-fit:cover;cursor:pointer"
+           onclick="abrirGaleria(3)"></video>
+  </div>
+</div>
 <!-- GALERIA OVERLAY -->
 <div id="galeriaOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:none;z-index:999999;overflow:hidden">
   <div id="galeriaTopo" style="position:absolute;top:0;left:0;width:100%;padding:20px 15px 10px;background:linear-gradient(to bottom,rgba(0,0,0,.7),transparent);color:#fff;">
